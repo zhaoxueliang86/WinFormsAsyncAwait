@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WinFormsAsyncAwait", "WinFormsAsyncAwait\WinFormsAsyncAwait.csproj", "{347F1900-A353-4559-A6C6-4C6ED22E7F4B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{347F1900-A353-4559-A6C6-4C6ED22E7F4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{347F1900-A353-4559-A6C6-4C6ED22E7F4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{347F1900-A353-4559-A6C6-4C6ED22E7F4B}.Debug|x64.ActiveCfg = Debug|x64
+		{347F1900-A353-4559-A6C6-4C6ED22E7F4B}.Debug|x64.Build.0 = Debug|x64
+		{347F1900-A353-4559-A6C6-4C6ED22E7F4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{347F1900-A353-4559-A6C6-4C6ED22E7F4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{347F1900-A353-4559-A6C6-4C6ED22E7F4B}.Release|x64.ActiveCfg = Release|x64
+		{347F1900-A353-4559-A6C6-4C6ED22E7F4B}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {674A1DCA-8728-4321-9197-97B0949A93AA}
+	EndGlobalSection
+EndGlobal
