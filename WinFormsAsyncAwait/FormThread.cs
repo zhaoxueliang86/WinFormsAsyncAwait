@@ -50,6 +50,7 @@ namespace WinFormsAsyncAwait
             foreach (var book in Data.Books)
             {
                 var task = await Task.Run(book.Search).ConfigureAwait(true);
+                
                 AppendLineThread($"{++idx}.{task}        ThreadId£º{Environment.CurrentManagedThreadId}");
             }
 
@@ -138,7 +139,7 @@ namespace WinFormsAsyncAwait
 
         private void AppendLineThread(string text)
         {
-            this.Invoke(() => AppendLine(text));
+            this.BeginInvoke(() => AppendLine(text));
         }
 
         private async void BtnEvent_Click(object sender, EventArgs e)
