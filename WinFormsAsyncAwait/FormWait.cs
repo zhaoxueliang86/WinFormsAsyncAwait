@@ -25,6 +25,11 @@ namespace WinFormsAsyncAwait
             resultTextBox.Refresh();
         }
 
+        private void InvworkAppendLine(string text)
+        {
+            BeginInvoke(() => AppendLine(text));
+        }
+
         private void BtnWait_Click(object sender, EventArgs e)
         {
             Stopwatch sw = Stopwatch.StartNew();    //计时器
@@ -57,7 +62,7 @@ namespace WinFormsAsyncAwait
 
             for (int i = 0; i < Data.Books.Count; i++)
             {
-                var book= Data.Books[i];
+                var book = Data.Books[i];
                 Tasks.Add(Task.Run(() =>
                 {
                     return book.Search();
@@ -94,6 +99,25 @@ namespace WinFormsAsyncAwait
             }
             sw.Stop();
             AppendLine($"WaitAny完成：{Convert.ToSingle(sw.ElapsedMilliseconds) / 1000}秒");
+        }
+
+        private void BtnDeadlock_Click(object sender, EventArgs e)
+        {
+            #region 死锁演示
+            Stopwatch sw = Stopwatch.StartNew();    //计时器
+            resultTextBox.Clear();
+            AppendLine("Wait开始......");
+
+            for (int i = 0; i < Data.Books.Count; i++)
+            {
+                var book = Data.Books[i];
+                var idx = i + 1;
+                var task = book.SearchAsync().ContinueWith(t => InvworkAppendLine($"{idx}.{t.Result}"));
+            }
+
+            sw.Stop();
+            AppendLine($"Wait完成：{Convert.ToSingle(sw.ElapsedMilliseconds) / 1000}秒");
+            #endregion
         }
     }
 }
